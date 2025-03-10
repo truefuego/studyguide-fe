@@ -2,8 +2,13 @@ import React from 'react'
 import Text from '../../common/Text'
 import { sidePanelItems } from '../../../constants/constants'
 import SidePanelButton from './SidePanelButton'
+import { LogoutIcon } from '../../../assets/icons/icons'
 
 const SidePanel:React.FC = () => {
+  const handleLogout = () => {
+    console.log('logout');
+  }
+
   return (
     <div className='flex flex-col bg-side-panel-bg w-56 h-screen justify-between border-r-2 border-primary-border'>
       <div>
@@ -12,8 +17,9 @@ const SidePanel:React.FC = () => {
           {sidePanelItems.map((item, index) => <SidePanelButton key={index} text={item.text} Icon={item.Icon}/>)}
         </div>
       </div>
-      <div className='p-4'>
-        <div>
+      <div className='p-4' onClick={handleLogout}>
+        <div className='flex items-center gap-3 ml-2'>
+          <LogoutIcon />
           <p className='text-accent-red text-xl'>Logout</p>
         </div>
       </div>
