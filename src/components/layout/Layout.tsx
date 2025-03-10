@@ -1,5 +1,5 @@
 import React from 'react'
-import SidePanel from './SidePanel'
+import SidePanel from './sidePanel/SidePanel'
 import { Outlet } from 'react-router-dom'
 
 const Layout:React.FC = () => {

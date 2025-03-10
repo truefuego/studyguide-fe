@@ -5,6 +5,9 @@ import LessonsPage from '../pages/LessonsPage';
 import AuthenticationPage from './AuthenticationRoutes';
 import Layout from '../components/layout/Layout';
 import NotFoundPage from '../pages/NotFoundPage';
+import FavouritePage from '../pages/FavouritePage';
+import RandomPage from '../pages/RandomPage';
+import RecentPage from '../pages/RecentPage';
 
 const AppRoutes:React.FC = () => {
   return (
@@ -17,6 +20,9 @@ const AppRoutes:React.FC = () => {
         }>
           <Route path='' element={<HomePage />} />
           <Route path='lessons' element={<LessonsPage />} />
+          <Route path='favourites' element={<FavouritePage />} />
+          <Route path='random' element={<RandomPage />} />
+          <Route path='recent' element={<RecentPage />} />
         </Route>
         <Route path='*' element={<NotFoundPage />} />
       </Routes>

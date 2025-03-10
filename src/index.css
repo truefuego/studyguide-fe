@@ -3,6 +3,8 @@
 @theme{
     --color-primary-bg: #1C1E1C;
     --color-secondary-bg: #484848;
+    --color-side-panel-bg: #151715;
+    --color-primary-border: #484848;
     --color-graph-bg: #0D1117;
     --color-graph-border: #161E2B;
     --color-graph-item-inactive: #161B22;

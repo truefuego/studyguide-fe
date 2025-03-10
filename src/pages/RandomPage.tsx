@@ -1,8 +1,12 @@
 import React from 'react'
+import Text from '../components/common/Text'
+import ScreenWrapper from '../components/common/ScreenWrapper'
 
 const RandomPage:React.FC = () => {
   return (
-    <div>RandomPage</div>
+    <ScreenWrapper>
+      <Text text='RandomPage' />
+    </ScreenWrapper>
   )
 }
 

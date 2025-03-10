@@ -1,8 +1,12 @@
 import React from 'react'
+import Text from '../components/common/Text';
+import ScreenWrapper from '../components/common/ScreenWrapper';
 
 const LoginPage:React.FC = () => {
   return (
-    <div>LoginPage</div>
+    <ScreenWrapper>
+      <Text text='LoginPage' />
+    </ScreenWrapper>
   )
 }
 
