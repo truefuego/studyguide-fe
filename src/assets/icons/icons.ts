@@ -11,6 +11,9 @@ import UserIcon from './user.svg';
 import Avatar from './avatar.svg';
 import IndiaFlagIcon from './india.svg';
 import JapanFlagIcon from './japan.svg';
+import HeartRedIcon from './heard-red.svg';
+import SearchIcon from './search.svg';
+import FireIcon from './fire.svg';
 
 export {
     AddIcon,
@@ -26,4 +29,7 @@ export {
     Avatar,
     IndiaFlagIcon,
     JapanFlagIcon,
+    HeartRedIcon,
+    SearchIcon,
+    FireIcon,
 }
