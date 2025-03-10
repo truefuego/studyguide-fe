@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from '../pages/HomePage';
 import LessonsPage from '../pages/LessonsPage';
 import AuthenticationPage from './AuthenticationRoutes';
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import NotFoundPage from '../pages/NotFoundPage';
 
 const AppRoutes:React.FC = () => {
