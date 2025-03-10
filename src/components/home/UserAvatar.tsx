@@ -16,7 +16,7 @@ const UserAvatar:React.FC = () => {
     }
   
   return (
-    <div className='relative bg-tertiary-text h-[256px] md:w-[576px] shadow-md rounded-2xl shadow-black flex justify-center items-end'>
+    <div className='relative bg-tertiary-text h-[256px] min-w-[320px] lg:w-[30vw] xl:w-[40vw] max-w-[576px] shadow-md rounded-2xl shadow-black flex justify-center items-end'>
         <div className='translate-y-[1px]'>
             <Avatar />
         </div>

@@ -24,7 +24,7 @@ const UserInfo:React.FC = () => {
     }
 
   return (
-    <div className='md:w-[576px] pt-4'>
+    <div className='min-w-[320px] lg:w-[30vw] xl:w-[40vw] max-w-[576px] pt-4'>
         <div className='flex justify-between'>
             <div>
                 <Text text={userData.userName} className='text-2xl'/>
@@ -35,7 +35,7 @@ const UserInfo:React.FC = () => {
                 {userLanguageFlags.map((Item, index) => <div key={index} className='cursor-pointer'><Item /></div>)}
             </div>
         </div>
-        <div className='flex gap-12'>
+        <div className='flex gap-4 md:gap-6 lg-gap-8 xl:gap-12'>
             <div className='m-4'>
                 <JapanFlagIcon />
             </div>

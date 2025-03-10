@@ -2,9 +2,9 @@ import clsx from 'clsx';
 import React from 'react'
 import { ITextProps } from './type';
 
-const Text:React.FC<ITextProps> = ({ text, className }) => {
+const Text:React.FC<ITextProps> = ({ text, className, color }) => {
   return (
-    <p className={`text-primary-text ${clsx(className)}`}>{text}</p>
+    <p className={`${color ? `text-${clsx(color)}` : 'text-primary-text'} ${clsx(className)}`}>{text}</p>
   )
 }
 

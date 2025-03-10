@@ -14,6 +14,7 @@ import JapanFlagIcon from './japan.svg';
 import HeartRedIcon from './heard-red.svg';
 import SearchIcon from './search.svg';
 import FireIcon from './fire.svg';
+import ArrowIcon from './arrow.svg'
 
 export {
     AddIcon,
@@ -32,4 +33,5 @@ export {
     HeartRedIcon,
     SearchIcon,
     FireIcon,
+    ArrowIcon,
 }
