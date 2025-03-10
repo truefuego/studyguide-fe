@@ -1,10 +1,6 @@
 import clsx from 'clsx';
 import React from 'react'
-
-interface ITextProps{
-    text: string;
-    className?: string;
-}
+import { ITextProps } from './type';
 
 const Text:React.FC<ITextProps> = ({ text, className }) => {
   return (

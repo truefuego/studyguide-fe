@@ -1,14 +1,12 @@
 import React from 'react'
-
-interface IWrapperComponentProps {
-    children: React.ReactNode;
-}
+import { motion } from 'framer-motion';
+import { IWrapperComponentProps } from './type';
 
 const ScreenWrapper:React.FC<IWrapperComponentProps> = ({ children }) => {
   return (
-    <div className='bg-primary-bg md:w-[calc(100vw-224px)] w-screen p-12'>
-        {children}
-    </div>
+    <motion.div className='bg-primary-bg md:w-[calc(100vw-224px)] w-screen p-12' initial={{ opacity: 0 }} animate={{ opacity: 1, transition: { duration: .3 }}}>
+      {children}
+    </motion.div>
   )
 }
 

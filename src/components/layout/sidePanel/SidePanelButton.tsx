@@ -1,11 +1,7 @@
 import React from 'react'
 import Text from '../../common/Text'
 import { useLocation, useNavigate } from 'react-router-dom';
-
-interface ISidePanelButtonProps {
-    text: string;
-    Icon: string;
-}
+import { ISidePanelButtonProps } from '../type';
 
 const SidePanelButton:React.FC<ISidePanelButtonProps> = ({ text, Icon }) => {
     const navigate = useNavigate();

@@ -1,9 +1,6 @@
 import React from 'react'
 import LoginPage from '../pages/LoginPage';
-
-interface IAuthenticationPageProps { 
-  children: React.ReactNode;
-}
+import { IAuthenticationPageProps } from './type';
 
 const AuthenticationPage:React.FC<IAuthenticationPageProps> = ({ children }) => {
   const isUserLoggedIn = true;
