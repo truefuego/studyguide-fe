@@ -21,4 +21,14 @@ export const sidePanelItems = [
         text: 'Recent',
         Icon: ClockIcon,
     },
-]
+];
+
+export const clockPreferences = {
+    timeZone: 'Asia/Kolkata',
+    year: 'numeric' as const,
+    month: 'numeric' as const,
+    day: 'numeric' as const,
+    hour: 'numeric' as const,
+    minute: 'numeric' as const,
+    hour12: true
+};

@@ -8,7 +8,7 @@ import EditIcon from './pencil.svg';
 import ShuffleIcon from './shuffle.svg';
 import TrashIcon from './trash.svg';
 import UserIcon from './user.svg';
-
+import Avatar from './avatar.svg';
 
 export {
     AddIcon,
@@ -21,4 +21,5 @@ export {
     ShuffleIcon,
     TrashIcon,
     UserIcon,
+    Avatar
 }

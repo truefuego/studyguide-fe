@@ -6,7 +6,7 @@ interface IWrapperComponentProps {
 
 const ScreenWrapper:React.FC<IWrapperComponentProps> = ({ children }) => {
   return (
-    <div className='bg-primary-bg w-[calc(100vw-224px)] p-12'>
+    <div className='bg-primary-bg md:w-[calc(100vw-224px)] w-screen p-12'>
         {children}
     </div>
   )
