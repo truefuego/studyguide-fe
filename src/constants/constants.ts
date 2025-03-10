@@ -1,4 +1,4 @@
-import { BookIcon, ClockIcon, HeartIcon, ShuffleIcon, UserIcon } from '../assets/icons/icons'
+import { BookIcon, ClockIcon, HeartIcon, IndiaFlagIcon, JapanFlagIcon, ShuffleIcon, UserIcon } from '../assets/icons/icons'
 
 export const sidePanelItems = [
     {
@@ -32,3 +32,8 @@ export const clockPreferences = {
     minute: 'numeric' as const,
     hour12: true
 };
+
+export const userLanguageFlags = [
+    JapanFlagIcon,
+    IndiaFlagIcon
+]

@@ -9,6 +9,8 @@ import ShuffleIcon from './shuffle.svg';
 import TrashIcon from './trash.svg';
 import UserIcon from './user.svg';
 import Avatar from './avatar.svg';
+import IndiaFlagIcon from './india.svg';
+import JapanFlagIcon from './japan.svg';
 
 export {
     AddIcon,
@@ -21,5 +23,7 @@ export {
     ShuffleIcon,
     TrashIcon,
     UserIcon,
-    Avatar
+    Avatar,
+    IndiaFlagIcon,
+    JapanFlagIcon,
 }
