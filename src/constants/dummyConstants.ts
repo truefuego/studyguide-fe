@@ -414,4 +414,32 @@ export const dummyGraphUsageData = [
     {'date': '15-03-2024', 'count': 2},
     {'date': '14-03-2024', 'count': 0},
     {'date': '13-03-2024', 'count': 0}
-]
+];
+
+export const dummyLessonTags = [
+    {tag: 'Nouns', complete: 21, total: 30},
+    {tag: 'Particles', complete: 3, total: 34},
+    {tag: 'Verbs', complete: 9, total: 24},
+    {tag: 'Sentence Structure', complete: 19, total: 20},
+    {tag: 'Adverbs', complete: 5, total: 36},
+    {tag: 'Conjunction', complete: 23, total: 40},
+    {tag: 'Interjection', complete: 3, total: 20},
+    {tag: 'Adjective', complete: 9, total: 32},
+];
+
+export const dummyPracticeTags = [
+    {tag: 'Paragraphs', complete: 2, total: 9},
+    {tag: 'Stories', complete: 3, total: 5},
+    {tag: 'Listen', complete: 9, total: 24},
+    {tag: 'Mistakes', complete: 19, total: 20},
+    {tag: 'Fill in the blanks', complete: 3, total: 40},
+    {tag: 'Key Phrases', complete: 5, total: 36},
+    {tag: 'Sentence Translation', complete: 3, total: 77},
+    {tag: 'Speak', complete: 5, total: 6},
+];
+
+export const dummyBasicsData = [
+    {tag: 'Hiragana', complete: 45, total: 104},
+    {tag: 'Katakana', complete: 67, total: 119},
+    {tag: 'Kanji', complete: 5, total: 107},
+];
