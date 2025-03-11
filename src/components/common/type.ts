@@ -6,4 +6,11 @@ export interface ITextProps{
 
 export interface IWrapperComponentProps {
     children: React.ReactNode;
+    className?: string;
 };
+
+export interface ICustomButtonProps {
+    text: string;
+    color: string;
+    onClick: () => void;
+}
