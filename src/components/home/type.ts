@@ -5,4 +5,8 @@ export interface IRecentLessonsItemProps {
     time:string;
     duration: string;
     points: number;
+};
+
+export interface IUsageGraphItemProps {
+    count: number;
 }

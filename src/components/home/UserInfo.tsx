@@ -18,7 +18,7 @@ const UserInfo:React.FC = () => {
         return (
             <div className='flex items-center gap-2'>
                 <Icon />
-                <p className={`text-${clsx(color)} text-xl`}>{val}</p>
+                <p className={`${clsx(color)} text-xl`}>{val}</p>
             </div>
         );
     }
@@ -39,9 +39,9 @@ const UserInfo:React.FC = () => {
             <div className='m-4'>
                 <JapanFlagIcon />
             </div>
-            {renderUserIconInfo(FireIcon,5,'orange')}
-            {renderUserIconInfo(SearchIcon,463,'blue')}
-            {renderUserIconInfo(HeartRedIcon,4,'red')}
+            {renderUserIconInfo(FireIcon,5,'text-orange')}
+            {renderUserIconInfo(SearchIcon,463,'text-blue')}
+            {renderUserIconInfo(HeartRedIcon,4,'text-red')}
         </div>
     </div>
   )
