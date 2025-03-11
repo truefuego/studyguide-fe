@@ -9,4 +9,9 @@ export interface IRecentLessonsItemProps {
 
 export interface IUsageGraphItemProps {
     count: number;
+};
+
+export interface IPracticeButtonProps {
+    text: string;
+    link: string;
 }

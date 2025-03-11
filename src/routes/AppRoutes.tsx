@@ -19,7 +19,8 @@ const AppRoutes:React.FC = () => {
           </AuthenticationPage>
         }>
           <Route path='' element={<HomePage />} />
-          <Route path='lessons' element={<LessonsPage />} />
+          <Route path='lessons' element={<LessonsPage />}/>
+          <Route path='lessons/:route' element={<LessonsPage />}/>
           <Route path='favourites' element={<FavouritePage />} />
           <Route path='random' element={<RandomPage />} />
           <Route path='recent' element={<RecentPage />} />
