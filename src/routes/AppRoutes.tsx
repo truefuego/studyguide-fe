@@ -8,6 +8,7 @@ import NotFoundPage from '../pages/NotFoundPage';
 import FavouritePage from '../pages/FavouritePage';
 import RandomPage from '../pages/RandomPage';
 import RecentPage from '../pages/RecentPage';
+import LessonTypePage from '../pages/LessonTypePage';
 
 const AppRoutes:React.FC = () => {
   return (
@@ -19,8 +20,10 @@ const AppRoutes:React.FC = () => {
           </AuthenticationPage>
         }>
           <Route path='' element={<HomePage />} />
-          <Route path='lessons' element={<LessonsPage />}/>
-          <Route path='lessons/:route' element={<LessonsPage />}/>
+          <Route path='lessons'>
+            <Route path='' element={<LessonsPage />} />
+            <Route path=':route' element={<LessonTypePage />} />
+          </Route>
           <Route path='favourites' element={<FavouritePage />} />
           <Route path='random' element={<RandomPage />} />
           <Route path='recent' element={<RecentPage />} />
