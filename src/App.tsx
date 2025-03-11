@@ -1,9 +1,12 @@
 import './App.css'
+import { HttpMethodContextProvider } from './contexts/httpContextProvider';
 import AppRoutes from './routes/AppRoutes'
 
 function App() {
   return (
-    <AppRoutes />
+    <HttpMethodContextProvider>
+      <AppRoutes />
+    </HttpMethodContextProvider>
   )
 }
 
