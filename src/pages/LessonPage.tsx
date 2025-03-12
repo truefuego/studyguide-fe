@@ -6,12 +6,14 @@ import { CrossIcon, HeartRedIcon } from '../assets/icons/icons';
 import Text from '../components/common/Text';
 import CloseLessonPopUpModal from '../components/modals/CloseLessonPopUpModal';
 import { useNavigate } from 'react-router-dom';
+import SelectOptionsMode from '../components/lessons/Modes/SelectOptionsMode';
 
 const LessonPage:React.FC = () => {
     const [currentStep, setCurrentStep] = useState<number>(0);
     const totalHearts = 5;
     const navigate = useNavigate();
     const [isCloseLessonModalOpen, setIsCloseLessonModalOpen] = useState<boolean>(false);
+    const [selectedOption, setSelectedOption] = useState<string>('');
 
     const handleCloseLesson = () => {
         navigate('/lessons');
@@ -43,7 +45,16 @@ const LessonPage:React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <div className='w-[100%] border-primary-border border-t-2 '>
+                <SelectOptionsMode 
+                    selectedOption={selectedOption} 
+                    setSelectedOption={setSelectedOption} 
+                    question={'Question?'}
+                    option1={'option 1'}
+                    option2={'option 2'}
+                    option3={'option 3'}
+                    option4={'option 4'}
+                />
+                <div className='w-[100%] border-primary-border border-t-2'>
                     <div className='flex w-[100%] md:w-[80%] justify-between'>
                         <div />
                         <CustomButton text={currentStep === 10 ? 'CONTINNUE' : 'CHECK'} onClick={handleCheckClick} color='accent-green'/>

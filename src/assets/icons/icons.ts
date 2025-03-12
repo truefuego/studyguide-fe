@@ -15,6 +15,7 @@ import HeartRedIcon from './heard-red.svg';
 import SearchIcon from './search.svg';
 import FireIcon from './fire.svg';
 import ArrowIcon from './arrow.svg'
+import ThinkingDots from './thinking-dots.svg';
 
 export {
     AddIcon,
@@ -34,4 +35,5 @@ export {
     SearchIcon,
     FireIcon,
     ArrowIcon,
+    ThinkingDots,
 }
