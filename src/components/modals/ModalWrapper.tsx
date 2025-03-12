@@ -1,6 +1,7 @@
 import Text from "../common/Text";
 import { IModalWrapperProps } from "./type";
 import { CrossIcon } from "../../assets/icons/icons";
+import { motion } from "framer-motion";
 
 const ModalWrapper:React.FC<IModalWrapperProps> = ({ 
     title, 
@@ -13,7 +14,7 @@ const ModalWrapper:React.FC<IModalWrapperProps> = ({
 }) => {  
 
     return (
-        <div className={`absolute top-0 z-10 ${isOpen ? '' : 'hidden'}`} aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <motion.div className={`absolute top-0 z-10 transition-all duration-300`} aria-labelledby="modal-title" role="dialog" aria-modal="true" initial={{ opacity: 0 }} animate={{ opacity: isOpen ? 1 : 0, display: isOpen ? '' : 'none', transition: { duration: .3 }}} exit={{}}>
             <div className="fixed inset-0 bg-primary-bg/75 transition-opacity z-10" aria-hidden="true" onClick={onClose} />
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
                 <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
@@ -36,7 +37,7 @@ const ModalWrapper:React.FC<IModalWrapperProps> = ({
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
   }
 
