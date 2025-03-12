@@ -10,10 +10,12 @@ import SelectOptionsMode from '../components/lessons/Modes/SelectOptionsMode';
 
 const LessonPage:React.FC = () => {
     const [currentStep, setCurrentStep] = useState<number>(0);
-    const totalHearts = 5;
+    const [totalCorrectGuessed, setTotalCorrectGuessed] = useState<number>(0);
+    const [totalHearts, setTotalHearts] = useState<number>(5);
     const navigate = useNavigate();
     const [isCloseLessonModalOpen, setIsCloseLessonModalOpen] = useState<boolean>(false);
     const [selectedOption, setSelectedOption] = useState<string>('');
+    const correctOption = 'option 1'
 
     const handleCloseLesson = () => {
         navigate('/lessons');
@@ -25,8 +27,15 @@ const LessonPage:React.FC = () => {
 
     const handleCheckClick = () => {
         if(currentStep === 10) {
+            console.log(totalCorrectGuessed);
             console.log('End Game');
         }
+        if(selectedOption === correctOption) {
+            setTotalCorrectGuessed(prev => prev+1);
+        } else {
+            setTotalHearts(prev => prev-1);
+        }
+        setSelectedOption('');
         setCurrentStep(prev => Math.min(10,prev+1));
     }
 
@@ -57,7 +66,12 @@ const LessonPage:React.FC = () => {
                 <div className='w-[100%] border-primary-border border-t-2'>
                     <div className='flex w-[100%] md:w-[80%] justify-between'>
                         <div />
-                        <CustomButton text={currentStep === 10 ? 'CONTINNUE' : 'CHECK'} onClick={handleCheckClick} color='accent-green'/>
+                        <CustomButton 
+                            text={currentStep === 10 ? 'CONTINNUE' : 'CHECK'} 
+                            isClickable={selectedOption !== ''} 
+                            onClick={handleCheckClick}
+                            color='accent-green'
+                        />
                     </div>
                 </div>
             </div>
