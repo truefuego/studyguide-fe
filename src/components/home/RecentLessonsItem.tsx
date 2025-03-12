@@ -13,7 +13,7 @@ const RecentLessonsItem:React.FC<IRecentLessonsItemProps> = ({ title, score, tim
         <Text text={score + ' / 10'} className='text-lg'/>
         <div className='flex gap-8'>
           <Text text={duration} className='text-sm text-tertiary-text'/>
-          <Text text={'+' + points.toString()} className='text-sm' color='accent-green'/>
+          <Text text={'+' + points.toString()} className='text-sm text-accent-green' color='accent-green'/>
         </div>
       </div>
     </div>
