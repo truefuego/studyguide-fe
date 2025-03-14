@@ -449,19 +449,19 @@ export const dummyBasicsData = [
 
 export const dummyLessonData = [
     {
-        LessonMode: FillInTheBlanksMode,
-        props: {
-            question: 'Question 1 ___ extends',
-            correct: 'option 1',
-            options: [],
-        },
-    },
-    {
         LessonMode: SelectOptionsMode,
         props: {
             question: 'Question 2',
             options: ['option A', 'option B', 'option C', 'option D'],
             correct: 'option A',
+        },
+    },
+    {
+        LessonMode: FillInTheBlanksMode,
+        props: {
+            question: 'Question 1 ___ extends',
+            correct: 'option 1',
+            options: [],
         },
     },
     {
