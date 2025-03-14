@@ -28,12 +28,13 @@ const LessonPage:React.FC = () => {
     }
 
     const handleCheckClick = useCallback(() => {
-        if(selectedOption === '') {
+        if(selectedOption === '' && currentStep < 10) {
             return;
         }
         if(currentStep === 10) {
             console.log(totalCorrectGuessed);
             console.log('End Game');
+            navigate('/lessons')
         }
         if(selectedOption === correctOption) {
             setTotalCorrectGuessed(prev => prev+1);
@@ -82,7 +83,7 @@ const LessonPage:React.FC = () => {
                         <div />
                         <CustomButton 
                             text={currentStep === 10 ? 'CONTINNUE' : 'CHECK'} 
-                            isClickable={selectedOption !== ''} 
+                            isClickable={selectedOption !== '' || currentStep === 10} 
                             onClick={handleCheckClick}
                             color='accent-green'
                         />
