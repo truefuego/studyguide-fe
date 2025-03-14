@@ -1,3 +1,4 @@
+import FillInTheBlanksMode from "../components/lessons/Modes/FillInTheBlanksMode";
 import SelectOptionsMode from "../components/lessons/Modes/SelectOptionsMode";
 
 export const dummyRecentLessonsData = [
@@ -448,11 +449,11 @@ export const dummyBasicsData = [
 
 export const dummyLessonData = [
     {
-        LessonMode: SelectOptionsMode,
+        LessonMode: FillInTheBlanksMode,
         props: {
-            question: 'Question 1',
-            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            question: 'Question 1 ___ extends',
             correct: 'option 1',
+            options: [],
         },
     },
     {

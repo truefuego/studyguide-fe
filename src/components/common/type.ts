@@ -14,4 +14,9 @@ export interface ICustomButtonProps {
     color: string;
     onClick: () => void;
     isClickable: boolean;
-}
+};
+
+export interface ICustomInputProps {
+    userInput: string;
+    setUserInput: (text: string) => void;
+};

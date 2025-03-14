@@ -1,6 +1,12 @@
 export interface ISelectOptionsModeProps {
-    selectedOption: string;
-    setSelectedOption: (text: string) => void;
+    selectedAnswer: string;
+    setSelectedAnswer: (text: string) => void;
     question: string;
     options: string[];
+};
+
+export interface IFillInTheBlanksModeProps {
+    selectedAnswer: string;
+    setSelectedAnswer: (text: string) => void;
+    question: string;
 };

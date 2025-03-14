@@ -15,9 +15,9 @@ const LessonPage:React.FC = () => {
     const [totalHearts, setTotalHearts] = useState<number>(5);
     const navigate = useNavigate();
     const [isCloseLessonModalOpen, setIsCloseLessonModalOpen] = useState<boolean>(false);
-    const [selectedOption, setSelectedOption] = useState<string>('');
-    const correctOption = dummyLessonData[currentStep]?.props.correct;
+    const [selectedAnswer, setSelectedAnswer] = useState<string>('');
     const currentLesson = dummyLessonData[currentStep];
+    const correctOption = currentLesson?.props.correct;
 
     const handleCloseLesson = () => {
         navigate('/lessons');
@@ -28,7 +28,7 @@ const LessonPage:React.FC = () => {
     }
 
     const handleCheckClick = useCallback(() => {
-        if(selectedOption === '' && currentStep < 10) {
+        if(selectedAnswer === '' && currentStep < 10) {
             return;
         }
         if(currentStep === 10) {
@@ -36,14 +36,14 @@ const LessonPage:React.FC = () => {
             console.log('End Game');
             navigate('/lessons')
         }
-        if(selectedOption === correctOption) {
+        if(selectedAnswer === correctOption) {
             setTotalCorrectGuessed(prev => prev+1);
         } else {
             setTotalHearts(prev => prev-1);
         }
-        setSelectedOption('');
+        setSelectedAnswer('');
         setCurrentStep(prev => Math.min(10,prev+1));
-    }, [currentStep, totalCorrectGuessed, selectedOption, correctOption]);
+    }, [selectedAnswer, currentStep, correctOption, totalCorrectGuessed, navigate]);
 
 
     useEffect(() => {
@@ -73,9 +73,9 @@ const LessonPage:React.FC = () => {
                         </div>
                     </div>
                 </div>
-                {currentStep < 10 ? React.createElement(currentLesson.LessonMode, {
-                    selectedOption,
-                    setSelectedOption,
+                {currentStep < 10 && currentLesson?.LessonMode ? React.createElement(currentLesson.LessonMode, {
+                    selectedAnswer,
+                    setSelectedAnswer,
                     ...currentLesson.props
                 }) : <LessonSummary />}
                 <div className='w-[100%] border-primary-border border-t-2'>
@@ -83,7 +83,7 @@ const LessonPage:React.FC = () => {
                         <div />
                         <CustomButton 
                             text={currentStep === 10 ? 'CONTINNUE' : 'CHECK'} 
-                            isClickable={selectedOption !== '' || currentStep === 10} 
+                            isClickable={selectedAnswer !== '' || currentStep === 10} 
                             onClick={handleCheckClick}
                             color='accent-green'
                         />
