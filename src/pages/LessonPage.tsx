@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import ScreenWrapper from '../components/common/ScreenWrapper'
 import ProgressBar from '../components/lessons/ProgressBar'
 import CustomButton from '../components/common/CustomButton';
@@ -6,7 +6,8 @@ import { CrossIcon, HeartRedIcon } from '../assets/icons/icons';
 import Text from '../components/common/Text';
 import CloseLessonPopUpModal from '../components/modals/CloseLessonPopUpModal';
 import { useNavigate } from 'react-router-dom';
-import SelectOptionsMode from '../components/lessons/Modes/SelectOptionsMode';
+import { dummyLessonData } from '../constants/dummyConstants';
+import LessonSummary from '../components/lessons/LessonSummary';
 
 const LessonPage:React.FC = () => {
     const [currentStep, setCurrentStep] = useState<number>(0);
@@ -15,7 +16,8 @@ const LessonPage:React.FC = () => {
     const navigate = useNavigate();
     const [isCloseLessonModalOpen, setIsCloseLessonModalOpen] = useState<boolean>(false);
     const [selectedOption, setSelectedOption] = useState<string>('');
-    const correctOption = 'option 1'
+    const correctOption = dummyLessonData[currentStep]?.props.correct;
+    const currentLesson = dummyLessonData[currentStep];
 
     const handleCloseLesson = () => {
         navigate('/lessons');
@@ -25,7 +27,10 @@ const LessonPage:React.FC = () => {
         setIsCloseLessonModalOpen(prev => !prev);
     }
 
-    const handleCheckClick = () => {
+    const handleCheckClick = useCallback(() => {
+        if(selectedOption === '') {
+            return;
+        }
         if(currentStep === 10) {
             console.log(totalCorrectGuessed);
             console.log('End Game');
@@ -37,7 +42,20 @@ const LessonPage:React.FC = () => {
         }
         setSelectedOption('');
         setCurrentStep(prev => Math.min(10,prev+1));
-    }
+    }, [currentStep, totalCorrectGuessed, selectedOption, correctOption]);
+
+
+    useEffect(() => {
+        const handleKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'Enter') {
+                handleCheckClick();
+            }
+        };
+        window.addEventListener('keydown', handleKeyPress);
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, [handleCheckClick]);
 
     return (
         <ScreenWrapper className='pb-0 px-0'>
@@ -54,15 +72,11 @@ const LessonPage:React.FC = () => {
                         </div>
                     </div>
                 </div>
-                <SelectOptionsMode 
-                    selectedOption={selectedOption} 
-                    setSelectedOption={setSelectedOption} 
-                    question={'Question?'}
-                    option1={'option 1'}
-                    option2={'option 2'}
-                    option3={'option 3'}
-                    option4={'option 4'}
-                />
+                {currentStep < 10 ? React.createElement(currentLesson.LessonMode, {
+                    selectedOption,
+                    setSelectedOption,
+                    ...currentLesson.props
+                }) : <LessonSummary />}
                 <div className='w-[100%] border-primary-border border-t-2'>
                     <div className='flex w-[100%] md:w-[80%] justify-between'>
                         <div />

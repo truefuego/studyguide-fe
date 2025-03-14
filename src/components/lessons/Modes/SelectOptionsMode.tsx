@@ -4,7 +4,7 @@ import Text from '../../common/Text';
 import { Avatar, ThinkingDots } from '../../../assets/icons/icons';
 import { ISelectOptionsModeProps } from './type';
 
-const SelectOptionsMode:React.FC<ISelectOptionsModeProps> = ({ selectedOption, setSelectedOption, question, option1, option2, option3, option4 }) => {
+const SelectOptionsMode:React.FC<ISelectOptionsModeProps> = ({ selectedOption, setSelectedOption, question, options }) => {
 
   return (
     <div className='h-full flex flex-col items-center'>
@@ -19,10 +19,7 @@ const SelectOptionsMode:React.FC<ISelectOptionsModeProps> = ({ selectedOption, s
           </div>
         </div>
         <div className='grid gap-4 justify-center'>
-          <OptionButton index={1} text={option1} selectedOption={selectedOption} onPress={setSelectedOption}/>
-          <OptionButton index={2} text={option2} selectedOption={selectedOption} onPress={setSelectedOption}/>
-          <OptionButton index={3} text={option3} selectedOption={selectedOption} onPress={setSelectedOption}/>
-          <OptionButton index={4} text={option4} selectedOption={selectedOption} onPress={setSelectedOption}/>
+          {options.map((item, index) => <OptionButton key={index} index={index+1} text={item} selectedOption={selectedOption} onPress={setSelectedOption}/>)}
         </div>
       </div>
     </div>

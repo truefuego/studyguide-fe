@@ -1,3 +1,5 @@
+import SelectOptionsMode from "../components/lessons/Modes/SelectOptionsMode";
+
 export const dummyRecentLessonsData = [
     {
         title: "Sentence Translation",
@@ -442,4 +444,87 @@ export const dummyBasicsData = [
     {tag: 'Hiragana', complete: 45, total: 104},
     {tag: 'Katakana', complete: 67, total: 119},
     {tag: 'Kanji', complete: 5, total: 107},
+];
+
+export const dummyLessonData = [
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 1',
+            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            correct: 'option 1',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 2',
+            options: ['option A', 'option B', 'option C', 'option D'],
+            correct: 'option A',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 3',
+            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            correct: 'option 1',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 4',
+            options: ['option A', 'option B', 'option C', 'option D'],
+            correct: 'option A',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 5',
+            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            correct: 'option 1',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 6',
+            options: ['option A', 'option B', 'option C', 'option D'],
+            correct: 'option A',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 7',
+            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            correct: 'option 1',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 8',
+            options: ['option A', 'option B', 'option C', 'option D'],
+            correct: 'option A',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 9',
+            options: ['option 1', 'option 2', 'option 3', 'option 4'],
+            correct: 'option 1',
+        },
+    },
+    {
+        LessonMode: SelectOptionsMode,
+        props: {
+            question: 'Question 10',
+            options: ['option A', 'option B', 'option C', 'option D'],
+            correct: 'option A',
+        },
+    }
 ];
