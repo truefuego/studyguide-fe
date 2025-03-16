@@ -8,6 +8,7 @@ import CloseLessonPopUpModal from '../components/modals/CloseLessonPopUpModal';
 import { useNavigate } from 'react-router-dom';
 import { dummyLessonData } from '../constants/dummyConstants';
 import LessonSummary from '../components/lessons/LessonSummary';
+import { ILessonModeProps } from '../components/lessons/Modes/type';
 
 const LessonPage:React.FC = () => {
     const [currentStep, setCurrentStep] = useState<number>(0);
@@ -73,7 +74,7 @@ const LessonPage:React.FC = () => {
                         </div>
                     </div>
                 </div>
-                {currentStep < 10 && currentLesson?.LessonMode ? React.createElement(currentLesson.LessonMode, {
+                {currentStep < 10 && currentLesson?.LessonMode ? React.createElement(currentLesson.LessonMode as React.FC<ILessonModeProps>, {
                     selectedAnswer,
                     setSelectedAnswer,
                     ...currentLesson.props

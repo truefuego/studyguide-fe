@@ -10,3 +10,19 @@ export interface IFillInTheBlanksModeProps {
     setSelectedAnswer: (text: string) => void;
     question: string;
 };
+
+export interface IPairMatchingModeProps {
+    selectedAnswer?: string;
+    setSelectedAnswer: (text: string) => void;
+    question: string;
+    options: string[];
+    correct: string;
+}
+
+export interface ILessonModeProps {
+    selectedAnswer?: string;
+    setSelectedAnswer?: (text: string) => void;
+    question?: string;
+    options?: string[];
+    correct?: string;
+}
