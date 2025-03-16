@@ -14,3 +14,8 @@ export interface IPairButtonProps {
     setSelectedOptions: (text: string[]) => void;
     setProcessedOptions: (text: string[]) => void;
 };
+
+export interface IWordButtonProps {
+    text: string;
+    handleSelect: () => void;
+}

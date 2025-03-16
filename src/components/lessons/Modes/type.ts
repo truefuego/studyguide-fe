@@ -26,3 +26,10 @@ export interface ILessonModeProps {
     options?: string[];
     correct?: string;
 }
+
+export interface ISentenceBuildingModeProps {
+    question: string;
+    options: string[];
+    selectedAnswer: string;
+    setSelectedAnswer: (text: string) => void;
+}

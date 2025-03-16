@@ -1,6 +1,7 @@
 import FillInTheBlanksMode from "../components/lessons/Modes/FillInTheBlanksMode";
 import PairMatchingMode from "../components/lessons/Modes/PairMatchingMode";
 import SelectOptionsMode from "../components/lessons/Modes/SelectOptionsMode";
+import SentenceBuildingMode from "../components/lessons/Modes/SentenceBuildingMode";
 
 export const dummyRecentLessonsData = [
     {
@@ -450,6 +451,14 @@ export const dummyBasicsData = [
 
 export const dummyLessonData = [
     {
+        LessonMode: SentenceBuildingMode,
+        props: {
+            question: 'Question 1',
+            options: ['word 1', 'word 2', 'word 3', 'word 4'],
+            correct: 'option 1 option 3 option 2',
+        },
+    },
+    {
         LessonMode: PairMatchingMode,
         props: {
             question: 'Question 2',
@@ -463,14 +472,6 @@ export const dummyLessonData = [
             question: 'Question 1 ___ extends',
             correct: 'option 1',
             options: [],
-        },
-    },
-    {
-        LessonMode: SelectOptionsMode,
-        props: {
-            question: 'Question 3',
-            options: ['option 1', 'option 2', 'option 3', 'option 4'],
-            correct: 'option 1',
         },
     },
     {
